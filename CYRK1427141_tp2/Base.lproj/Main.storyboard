@@ -104,7 +104,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9WF-1F-M8j">
                                 <rect key="frame" x="20" y="90" width="728" height="821"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ixv-uK-Tnn">
                                     <size key="itemSize" width="157" height="206"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -139,9 +139,13 @@
                                         <connections>
                                             <outlet property="celluleImage" destination="oOM-Fu-1VH" id="A1n-9Q-bD9"/>
                                             <outlet property="celluleNom" destination="PMI-qv-52R" id="QkW-Sb-8FI"/>
+                                            <segue destination="kn5-rH-ksL" kind="presentation" identifier="versInfo" modalPresentationStyle="pageSheet" modalTransitionStyle="crossDissolve" id="kgT-bz-704"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="N75-Dd-fCT" id="3Gr-zS-AEA"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,9 +160,70 @@
             </objects>
             <point key="canvasLocation" x="1415.625" y="37.5"/>
         </scene>
+        <!--Information-->
+        <scene sceneID="jKv-GN-DEK">
+            <objects>
+                <viewController id="kn5-rH-ksL" customClass="Information" customModule="CYRK1427141_tp2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.69999999999999996" contentMode="scaleToFill" id="iR1-C1-9DV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFS-t9-Ll3">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame05.png" translatesAutoresizingMaskIntoConstraints="NO" id="K2H-J0-uxN">
+                                <rect key="frame" x="40" y="148" width="404" height="559"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Y7-Kj-C0g">
+                                <rect key="frame" x="104" y="213" width="280" height="432"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-xI-vAT">
+                                <rect key="frame" x="452" y="161" width="284" height="529"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.97487436729984001" green="0.95229651620524036" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temporaire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJV-J7-MSq">
+                                <rect key="frame" x="40" y="30" width="696" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.98675677407796625" green="1" blue="0.98691488416725714" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5k-wx-4xm">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <segue destination="N75-Dd-fCT" kind="presentation" modalTransitionStyle="crossDissolve" id="IXB-MH-PC9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66711868523316065" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="rFb-E6-NHi"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageDansFrame" destination="9Y7-Kj-C0g" id="5u9-9Y-3Na"/>
+                        <outlet property="imageFond" destination="BFS-t9-Ll3" id="eCw-uk-Atb"/>
+                        <outlet property="texte" destination="mNZ-xI-vAT" id="Ufh-OY-rqg"/>
+                        <outlet property="titreOeuvre" destination="DJV-J7-MSq" id="ndF-vH-a7m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ds6-ml-VpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2206.25" y="37.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="brick01.jpg" width="1280" height="876"/>
         <image name="frame05.png" width="500" height="665"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IXB-MH-PC9"/>
+    </inferredMetricsTieBreakers>
 </document>
