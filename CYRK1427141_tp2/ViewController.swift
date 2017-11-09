@@ -10,16 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
-        print("test")
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(segwayEcranPrincipal), userInfo: nil, repeats: false)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func segwayEcranPrincipal() {
+        self.performSegue(withIdentifier: "ecranPrincipal", sender: self)
     }
-
-
 }
 
